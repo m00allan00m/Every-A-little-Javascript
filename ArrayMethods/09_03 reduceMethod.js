@@ -42,19 +42,28 @@ const marioScores = nintendoScores.reduce((accumulator, current) => {
 
 console.log(marioScores);
 
+//Code with Mosh https://www.youtube.com/watch?v=g1C40tDP0Bk&t=5s
 const number = [1, 4, 6, 8, 10];
 let sum = 0;
-for (let num of number) {
-  sum += num;
-  return sum;
-}
-
+for (let num of number) sum += num;
 console.log(sum);
-
-const reducer = sum.reduce((accumulator, currentValue) => {
+const reducer = number.reduce((accumulator, currentValue) => {
   accumulator += currentValue;
   return accumulator;
 }, 0);
-
 console.log(reducer);
-//Code with Mosh https://www.youtube.com/watch?v=g1C40tDP0Bk&t=5s
+
+//Fireship - Array Reduce in 100 seconds https://www.youtube.com/watch?v=tVCYa_bnITg
+//A Loop with a memory
+
+const orders = [
+  { id: cake, price: 8.0 },
+  { id: milk, price: 5.0 },
+  { id: toast, price: 11.0 },
+];
+
+const totalAmount = orders.reduce((accumulator, currentValue) => {
+  accumulator += currentValue.price;
+  return accumulator;
+}, 0);
+
