@@ -42,15 +42,13 @@ const marioScores = nintendoScores.reduce((accumulator, current) => {
 
 console.log(marioScores);
 
-//Code with Mosh https://www.youtube.com/watch?v=g1C40tDP0Bk&t=5s
-
 const number = [1, 4, 6, 8, 10];
-
 let sum = 0;
 for (let num of number) {
   sum += num;
   return sum;
 }
+
 console.log(sum);
 
 const reducer = sum.reduce((accumulator, currentValue) => {
@@ -59,3 +57,4 @@ const reducer = sum.reduce((accumulator, currentValue) => {
 }, 0);
 
 console.log(reducer);
+//Code with Mosh https://www.youtube.com/watch?v=g1C40tDP0Bk&t=5s
