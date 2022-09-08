@@ -25,17 +25,43 @@ const productDiscount = products.map((product) => {
 console.log(productDiscount);
 //after printing to console log I notice that the array productDiscount contain undefined : does this mean that is a non-destructive array method.
 
-const tryFiltherMethod = products.filter((product) => {
+const tryFilterMethod = products.filter((product) => {
   if (product.price > 20) {
     return { name: product.name, price: product.price / 2 }; //The divison operation is not working in case of filther
-  }
+  } //just returns filtered
 });
 
-const tryFiltherWith = products.filter((product) => {
-  if (product.price > 20 ? product.price / 2 : "") {
+const tryFilterWith = products.filter((product) => {
+  if (product.price > 20 ? product.price / 2 : 0) {
+    //ternary operation - not working
     return { name: product.name, price: product.price }; //The divison operation is not working in case of filther
   }
 });
 
-console.log(tryFiltherMethod);
-console.log(tryFiltherWith);
+console.log(tryFilterMethod);
+console.log(tryFilterWith);
+
+//map first then filter
+const maybeCombine2Methods1 = products
+  .map((product) => {
+    if (product.price > 20) {
+      return { name: product.name, price: product.price / 2 };
+    }
+  })
+  .filter((product) => product !== undefined);
+
+//note to self need more understand on usage !equal to derive a solution:
+
+console.log(maybeCombine2Methods1);
+
+//filter first then map : I like this method seems cleaner -> maybe because not 100% certain with filtering undefine
+
+const maybeCombine2Methods2 = products
+  .filter((product) => {
+    return product.price > 20;
+  })
+  .map((product) => {
+    return { name: product.name, price: product.price / 2 };
+  });
+
+console.log(maybeCombine2Methods2);
