@@ -1,2 +1,2 @@
-# Every A little Javascript
+# Every Day A Little Javascript
  A small bite everyday
