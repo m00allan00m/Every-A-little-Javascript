@@ -65,3 +65,14 @@ const maybeCombine2Methods2 = products
   });
 
 console.log(maybeCombine2Methods2);
+
+const maybeCombine2Methods3 = products
+  .map((product) => {
+    if (product.price > 20) {
+      return { name: product.name, price: product.price / 2 };
+    }
+  })
+  .filter(Boolean);
+
+//this makes it easy!
+console.log(maybeCombine2Methods3);
