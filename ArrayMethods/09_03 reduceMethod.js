@@ -1,4 +1,4 @@
-const scores = [10, 20, 30, 40, 50, 60, 70, 80];
+const scores = [10, 20, 30, 40, 50, 60, 70, 80, 55, 85, 96, 90];
 
 //function is to find out how many numbers are greater than 40
 //the difference is reduce function can a variable that can contain numbers or more aka accumulator
@@ -57,9 +57,9 @@ console.log(reducer);
 //A Loop with a memory
 
 const orders = [
-  { id: cake, price: 8.0 },
-  { id: milk, price: 5.0 },
-  { id: toast, price: 11.0 },
+  { id: "🥇", price: 8.0 },
+  { id: "🥛", price: 5.0 },
+  { id: "🍨", price: 11.0 },
 ];
 
 const totalAmount = orders.reduce((accumulator, currentValue) => {
@@ -67,3 +67,41 @@ const totalAmount = orders.reduce((accumulator, currentValue) => {
   return accumulator;
 }, 0);
 
+console.log(totalAmount); //24
+
+const totalAmount1 = orders.reduce((accumulator, currentValue) => {
+  if (currentValue.price > 5) {
+    accumulator += currentValue.price;
+  }
+  return accumulator;
+}, 0);
+
+console.log(totalAmount1);
+
+//All Things Javascript -- The magic of reduce https://www.youtube.com/watch?v=kC3AasLEuBA
+
+const totalPrice = orders.reduce(
+  (accumulator, currentValue) => (accumulator += currentValue.price),
+  0
+);
+console.log(totalPrice);
+
+const minMax = scores.reduce(
+  (accumulator, currentValue) => [
+    Math.min(accumulator[0], currentValue), //Math.min() returns the lowest-valued number passed into it,
+    Math.max(accumulator[1], currentValue), //Math.max()  returns the largest of the numbers given as input parameters,
+  ],
+  [100, 0] //intialised value
+);
+
+//for practice and understanding typing out : Complicated
+const maxMin = scores.reduce(
+  (accumulator, currentValue) => [
+    Math.max(accumulator[0], currentValue),
+    Math.min(accumulator[1], currentValue),
+  ],
+  [0, 100]
+);
+console.log(maxMin);
+console.log(minMax);
+// Leigh Halliday 29.3K subscribers Reduce: 10 Different Examples. JavaScript Fundamentals. https://www.youtube.com/watch?v=NiLUGy1Mh4U
