@@ -1,0 +1,27 @@
+const employees = {
+  boss: "Micheal",
+  secretary: "Pam",
+  sales: "Jim",
+  accountant: "Oscar",
+}
+
+const employeeKeys = Object.keys(employees)
+
+console.log(employeeKeys)
+const employeeValue = Object.values(employees)
+
+console.log(employeeValue)
+
+// Object.freeze(employees)
+// employees.supporter = "Carlsberg"
+//No Edit
+
+// Object.seal(employees)
+// employees.age = 33 // Object seal prevents new properties
+Object.seal(employees)
+console.log(employees)
+employees.boss = "Allan"
+console.log(employees.boss)
+Object.freeze(employees)
+employees.boss = "Elisa" // because of Object freeze no change to Object is permitted
+console.log(employees.boss)
