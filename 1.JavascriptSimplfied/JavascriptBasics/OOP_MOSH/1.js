@@ -87,21 +87,78 @@ let construct = new Constructed()
 
 function Circle(radius) {
   this.radius = radius
-  this.draw = function () {}
-  console.log(`draw`)
+  this.draw = () => {
+    return "Jello"
+  }
 }
 
 const circle = new Circle(10)
+console.log(`Enumerating Properties`)
 
+for (let keys in circle) {
+  if (typeof circle[keys] != "function") {
+    console.log(keys, circle[keys])
+  }
+}
 
+if ("draw" in circle) {
+  console.log(` draw circle`)
+}
 
-circle.location = {x: 1}
-circle["location"] = {x: 2}
+const circleKeys = Object.keys(circle)
+console.log(circleKeys)
+console.log(`How to add and delete properties in the object`)
+circle.locationX = {x: 1}
+circle[`locationY`] = {y: 1}
 
+delete circle.locationY
+delete circle[`locationX`]
 
-const propertyName = "location" //this is a variable
-circle[propertyName] = {x: 300} //this variable is being used
+console.log(circle)
 
-console.log(circle['location']);
+const circler = circle.draw()
+console.log(typeof circle.draw)
+console.log(circler)
 
+const dog = {
+  bark: "woof",
+  favoriteFood: "Purina Dog Food",
+  run: function () {
+    return "🌈"
+  },
+  reactionToFood: function () {
+    return `🐶 ${this.bark} ${this.bark}, wags his tail endlessly at ${this.favoriteFood}`
+  },
+}
 
+const seeDogRunning = dog.run()
+const foodReact = dog.reactionToFood()
+console.log(seeDogRunning)
+console.log(foodReact)
+
+const letThisBeObjectify = new Object()
+console.log(typeof letThisBeObjectify)
+const letThisAlsoBeObject = {}
+console.log(typeof letThisAlsoBeObject)
+
+const employees = {
+  boss: "micheal",
+  accountant: "tim",
+  driver: "jim",
+}
+
+const retrieveKeysfrom = Object.keys(employees)
+console.log(retrieveKeysfrom)
+const retrieveValuefrom = Object.values(employees)
+console.log(retrieveValuefrom)
+const retrieveEnteries = Object.entries(employees)
+console.log(retrieveEnteries)
+
+const enteriesArray = []
+
+retrieveEnteries.forEach((entry) => {
+  let keys = entry[1]
+  let values = entry[0]
+})
+
+console.log(enteriesArray)

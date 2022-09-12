@@ -4,8 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./1.js"></script>
+
     <title>Document</title>
+    <style>
+      .menu-item {
+        background-color: black;
+        color: white;
+      }
+      .menu-item.active {
+        background-color: white;
+        color: black;
+      }
+      body {
+        margin: 0;
+        padding: 20px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <ul>
+      <li onclick="menuClicked(this)" class="menu-item active">1</li>
+      <li onclick="menuClicked(this)" class="menu-item">2</li>
+      <li onclick="menuClicked(this)" class="menu-item">3</li>
+      <li onclick="menuClicked(this)" class="menu-item">4</li>
+    </ul>
+    <script src="./script.js"></script>
+  </body>
 </html>
