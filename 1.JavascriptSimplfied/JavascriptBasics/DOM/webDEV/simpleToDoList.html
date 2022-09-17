@@ -10,17 +10,38 @@
   </head>
 
   <body>
+
     <div id="list">
+
       <div class="list-items">Wash Dishes</div>
+
     </div>
 
     <form id="new-item-form">
+
       <label for="item-input">New Item</label>
       <input type="text" name="" id="item-input" />
       <button type="submit">Add Item</button>
+      
     </form>
+
   </body>
 </html>
+
+
+<!-- //select all element
+
+// disable default behaviour that refreshes the page
+//1.Create a new item
+//2.Add Item to a list
+//3.Clear Input
+//4.Setup event listener to delete -->
+
+
+
+
+
+
 
 <!-- .list-item {
   cursor: pointer;
@@ -32,8 +53,34 @@
   text-decoration: line-through;
 } -->
 
-<!-- 
-//select all element
-const form= document.querySelector('#new-item-form')
-const list= document.querySelector('#list')
-const input= document.querySelector('input') -->
+<!-- //select all element
+const form = document.querySelector('#new-item-form')
+const list = document.querySelector('#list')
+const input = document.querySelector('#item-input')
+
+//click submit button adds a new element onto list
+// disable default behaviour that refreshes the page
+//1.Create a new item
+//2.Add Item to a list
+//3.Clear Input
+//4.Setup event listener to delete
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  //1.Create a new item
+  const item = document.createElement('div')
+  //Grab input and assign to new item
+  item.innerHTML = input.value
+  //create class
+  item.classList.add('list-items')
+  //Put item onto list
+  list.appendChild(item)
+  //clear item input
+  item.value = ''
+  //remove item from list
+  item.addEventListener('click', () => {
+    list.removeChild(item)
+  })
+
+}) -->
+
