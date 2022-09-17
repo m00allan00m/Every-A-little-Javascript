@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./dataAttributes.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      button {
+        height: 90px;
+        width: 90px;
+      }
+    </style>
+    <button data-clicks="0">1</button>
+    <button data-clicks="0">2</button>
+    <button data-clicks="0">3</button>
+    <button data-clicks="0">4</button>
+  </body>
+</html>
+
+<!-- 
+const test = document.querySelector('[data-test-one]')
+
+test.dataset.testTwo = "5555"
+console.log(test.dataset)
+
+const buttons = document.querySelectorAll('button')
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const counter = parseInt(button.dataset.clicks)
+    button.dataset.clicks = counter + 1
+    button.innerText = parseInt(button.dataset.clicks)
+  })
+}) -->

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      div {
+        color: #333;
+      }
+      div > div {
+        margin-left: 0.5rem;
+        padding-left: 0.25rem;
+        border-left: 1px solid #777;
+      }
+    </style>
+    <div id="grandparent">
+      GRANDPARENT
+      <div class="parent">
+        PARENT
+        <div class="child">CHILD 1</div>
+        <div class="child">CHILD 2</div>
+        <div class="child">CHILD 3</div>
+      </div>
+      <div class="parent">PARENT</div>
+    </div>
+    <script src="./domTraversal.js"></script>
+  </body>
+</html>
+
+<!--  Answers
+
+const grandparent = document.querySelector('#grandparent')
+grandparent.style.color = '#2a9d8f'
+//--parents--
+const parentOne = grandparent.children[0]
+parentOne.style.color = 'red'
+const parentTwo = grandparent.children[1]
+parentTwo.style.color = 'red'
+//--children--
+const childOne = parentOne.children[0]
+const childTwo = parentOne.children[1]
+const childThree = parentOne.children[2]
+childOne.style.color = '#cdb4db'
+childTwo.style.color = '#ffc8dd'
+childThree.style.color = '#ffafcc'
+nextElementSibling
+previousElementSibling
+const targetLastParent = parentOne.nextElementSibling
+targetLastParent.style.color = '#2a9d8f' -->
