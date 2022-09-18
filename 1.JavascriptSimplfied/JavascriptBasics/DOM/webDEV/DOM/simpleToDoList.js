@@ -12,3 +12,8 @@ form.addEventListener('submit', (e) => {
     item.remove()
   })
 })
+
+form.classList = 'testing-class-list'
+form.classList.remove('testing-class-list')
+form.classList = 'testing-class-list'
+
